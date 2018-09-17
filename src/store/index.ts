@@ -5,7 +5,7 @@ import { createLogger } from 'redux-logger';
 import { generateEpics } from 'redux-observable-util';
 
 import { rootReducer } from '../reducers';
-import { TestService } from '../services';
+import { DataService } from '../services';
 import { APP_INITIAL_STATE } from './app.state';
 
 export * from './app.state';
@@ -27,5 +27,4 @@ export const store = createStore(rootReducer, APP_INITIAL_STATE,
   applyMiddleware(...middleware)
 );
 
-const testService = new TestService();
-epicMiddleware.run(generateEpics(testService));
+epicMiddleware.run(generateEpics(new DataService()/*, new ServiceClassTwo */));

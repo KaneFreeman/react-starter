@@ -1,15 +1,15 @@
 import { AnyAction } from 'redux';
-import { NgEpic, createAction } from 'redux-observable-util';
+import { NgEpic } from 'redux-observable-util';
 
 import { GET_DATA, GET_DATA_SUCCESS } from '../actions';
 
-export class TestService {
+export class DataService {
   @NgEpic(GET_DATA)
   testEpic(action: AnyAction, state$: any) {
     return fetch('data.json')
       .then(response => response.json())
       .then(response => {
-        return createAction(GET_DATA_SUCCESS, response);
+        return { type: GET_DATA_SUCCESS, payload: response };
       });
   }
 }

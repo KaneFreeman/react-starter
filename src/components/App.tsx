@@ -11,16 +11,16 @@ const App = ({ incrementCounter, counter, getData, data, state }: PropTypes) => 
       <img src={logo} className="App-logo" alt="logo" />
       <h1 className="App-title">Welcome to React</h1>
     </header>
-    <p className="App-intro">
-      <button onClick={incrementCounter}>Increment Counter</button>
+    <p className="mt-3">
+      <button className="btn btn-primary" onClick={incrementCounter}>Increment Counter</button>
     </p>
-    <p className="App-intro">{counter}</p>
-    <p className="App-intro">
-      <button onClick={getData}>Get Data</button>
+    <p className="mt-3">{counter}</p>
+    <p className="mt-3">
+      <button className="btn btn-primary" onClick={getData}>Get Data</button>
     </p>
-    <p className="App-intro">{JSON.stringify(data)}</p>
+    <p className="mt-3">{JSON.stringify(data)}</p>
     <h3>State</h3>
-    <p className="App-intro">{JSON.stringify(state)}</p>
+    <p className="mt-3">{JSON.stringify(state)}</p>
   </div>
 );
 
