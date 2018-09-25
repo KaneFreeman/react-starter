@@ -27,4 +27,4 @@ export const store = createStore(rootReducer, APP_INITIAL_STATE,
   applyMiddleware(...middleware)
 );
 
-epicMiddleware.run(generateEpics(new DataService()/*, new ServiceClassTwo */));
+epicMiddleware.run(generateEpics(DataService));
